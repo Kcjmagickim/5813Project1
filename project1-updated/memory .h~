@@ -1,5 +1,6 @@
 #ifndef MEMORY_H_
 #define MEMORY_H_
+/*Header file for memeory manipulation functions*/
 
 uint8_t *my_memmove(uint8_t *src, uint8_t *dst, size_t length);
 
