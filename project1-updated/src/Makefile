@@ -32,17 +32,35 @@ arch_arm32.i: arch_arm32.c
 conversion.i: conversion.c
 	$(CC) $(CFLAGS) $(INCLUDES) -E -o conversion.i conversion.c
 
+data.i: data.c
+	$(CC) $(CFLAGS) $(INCLUDES) -E -o data.i data.c
+
+debug.i: debug.c
+	$(CC) $(CFLAGS) $(INCLUDES) -E -o debug.i debug.c
+
 arch_arm32.asm: arch_arm32.c
 	$(CC) $(CFLAGS) $(INCLUDES) -S -o arch_arm32.asm arch_arm32.c
 
 conversion.asm: conversion.c
 	$(CC) $(CFLAGS) $(INCLUDES) -S -o conversion.asm conversion.c
 
+data.asm: data.c
+	$(CC) $(CFLAGS) $(INCLUDES) -S -o data.asm data.c
+
+debug.asm: debug.c
+	$(CC) $(CFLAGS) $(INCLUDES) -S -o debug.asm debug.c
+
 arch_arm32.o: arch_arm32.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c -o arch_arm32.o arch_arm32.c
 
 conversion.o: conversion.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c -o conversion.o conversion.c
+
+data.o: data.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c -o data.o data.c
+
+debug.o: debug.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c -o debug.o debug.c
 
 .PHONY: clean
 clean:
