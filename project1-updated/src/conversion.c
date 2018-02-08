@@ -3,35 +3,40 @@
 
 uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base){
 	int8_t exp, rem, i;
+	int8_t neg = 0;
 	int32_t val = data;
 	if (base>16 || base<2) return -1;
-	if (val>0){
+	if(val>0){
 		while(val>0){
 			val/=base;
 			exp++;
 		}
-	}
-	else{
+	}else{
 		while(val<0){
 			val/=base;
 			exp++;
 		}
-		exp++; /*for negative sign*/
+		exp++;
+		data*=-1;
+		neg=1;
 	}
 
 	ptr += exp;
 	*ptr = '\0';
 	ptr--;
-	for (i=0;i<=exp;i++){
+	for (i=0;i<exp-1;i++){
 		rem=data%base;
 		data/=base;
-		*ptr=(char) rem;
+		*ptr= (char) (rem+'0');
 		ptr--;
 	}
-	if(val<0){
+	if(neg){
 		*ptr='-';
 	}
-	return exp;
+	else{
+		*ptr= (char) (data+'0');	
+	}
+	return exp+1;
 }
 
 int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base){
@@ -40,17 +45,15 @@ int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base){
 	int8_t neg = 0;
 	if (base>16 || base<2) return -1;
 	if (*ptr == '-'){
-		ptr++;
 		neg=1;
+		digits--;
+		ptr++;
 	}
-	ptr+=(digits-1);
-	val+= (int32_t) *ptr;
-	ptr--;
-	for(i=0; i<(digits-1); i++){
-		val+= base*((int32_t) *ptr);
-		base*=base;
-		ptr--;
+	for(i=0; i<digits-1; i++){
+		val= base*val+((uint8_t) (*ptr-'0'));
+		ptr++;
 	}
+
 	if (neg){
 		val*=-1;
 	}

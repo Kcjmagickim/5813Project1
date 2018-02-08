@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#define BASE_16 16
+#define BASE_10 10
 /*Header file for basic data manipulation*/
 
 uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base);

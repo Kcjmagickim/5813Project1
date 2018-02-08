@@ -1,8 +1,10 @@
 #ifndef DATA_H_
 #define DATA_H_
+#include <stddef.h>
+#include <stdint.h>
 
 #define LITTLE_ENDIAN  0
-#define BIG_ENDIAN =1
+#define BIG_ENDIAN 1
 #define SWAP_NO_ERROR  0
 #define SWAP_ERROR  -1
 

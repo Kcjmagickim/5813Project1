@@ -1,8 +1,12 @@
 #include "memory.h"
+#include <stdint.h>
+#include <stddef.h>
+#include <stdlib.h>
 
 uint8_t * my_memmove(uint8_t *src, uint8_t *dst, size_t length){
 	/*Given pointer and length, move from src to dst*/
 	int i;
+	uint8_t *ret=dst;
 	if((dst-src)>0 && (dst-src)<length){
 		src+=(length-1); dst+=(length-1);
 		for(i=0; i<length; i++){
@@ -16,7 +20,7 @@ uint8_t * my_memmove(uint8_t *src, uint8_t *dst, size_t length){
 			src++; dst++;
 		}
 	}
-	return dst;
+	return ret;
 }
 
 uint8_t * my_memcpy(uint8_t * src, uint8_t * dst, size_t length){
@@ -64,18 +68,18 @@ uint8_t * my_reverse(uint8_t *src, size_t length){
 	return src;
 }
 
-void * reverse_words(size_t length){
+void * reserve_words(size_t length){
 	/*Given length, reserve dynamic word bits*/
-	int * reverse;
-	reverse = (int*) malloc (sizeof(int)*length);
-	if(!reverse){return NULL;}
-	else{return reverse;}
+	size_t * reserve;
+	reserve = (size_t *)malloc (sizeof(size_t)*length);
+	if(!reserve){return NULL;}
+	else{return reserve;}
 }
 
-void * free_words(void *src){
+void free_words(uint32_t *src){
 	/*Given pointer, free dynamic word bits*/
-	if(!src){return 1;}
+	if(!src){return;}
 	free(src);
 	src=NULL;
-	return 0;
+	return;
 }

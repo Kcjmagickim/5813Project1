@@ -19,6 +19,7 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include "debug.h"
 #include "platform.h"
 #include "project1.h"
 #include "memory.h"
@@ -31,12 +32,15 @@ int8_t test_data1() {
   int32_t value;
 
   PRINTF("\ntest_data1();\n");
+
   ptr = (uint8_t*) reserve_words( DATA_SET_SIZE_W );
+
 
   if (! ptr )
   {
     return TEST_ERROR;
   }
+
 
   digits = my_itoa( num, ptr, BASE_16);   
   value = my_atoi( ptr, digits, BASE_16);
@@ -44,7 +48,9 @@ int8_t test_data1() {
   PRINTF("  Initial number: %d\n", num);  
   PRINTF("  Final Decimal number: %d\n", value);  
   #endif
+  printf("1");
   free_words( (uint32_t*)ptr );
+  printf("2");
 
   if ( value != num )
   {
@@ -73,6 +79,7 @@ int8_t test_data2() {
   PRINTF("  Initial Decimal number: %d\n", num);  
   PRINTF("  Final Decimal number: %d\n", value);  
   #endif
+
   free_words( (uint32_t*)ptr );
 
   if ( value != num )
