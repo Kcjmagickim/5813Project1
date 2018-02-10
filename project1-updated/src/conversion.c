@@ -1,5 +1,6 @@
 #include "conversion.h"
 #include <stdint.h>
+#include <stdio.h>
 
 uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base){
 	int8_t exp, rem, i;
@@ -12,7 +13,8 @@ uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base){
 			exp++;
 		}
 	}else{
-		while(val<0){
+		val*=-1;
+		while(val>0){
 			val/=base;
 			exp++;
 		}
