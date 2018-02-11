@@ -4,6 +4,9 @@
 dynamic allocation, moves, and swaps
 @author: John Kim
 @date: Feb 1st, 2018
+
+Note: All function descriptions 
+resides in the header file.
 ***********************************/
 
 #include "memory.h"

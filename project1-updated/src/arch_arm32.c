@@ -4,6 +4,9 @@
 returns 0 if little-endian 1 otherwise
 @author: John Kim
 @date: Feb 1st, 2018
+
+Note: All function descriptions 
+resides in the header file.
 ***********************************/
 
 #include "arch_arm32.h"

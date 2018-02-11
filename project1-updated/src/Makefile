@@ -10,11 +10,11 @@ include sources.mk
 
 ifeq ($(PLATFORM),KL25z)
 	CC = arm-none-eabi-gcc
-	CFLAGS += -mfloat-abi=softfp	\
-	 -mcpu=cortex-m0	\
+	CFLAGS += -mcpu=cortex-m0plus	\
+	-mfloat-abi=soft	\
 	-march=armv6-m	\
 	-mthumb	\
-	-mfpu=fpv4-sp-d16	
+	-mfpu=fpv4-sp-d16		\
 	--specs=nosys.specs
 
 else ifeq ($(PLATFORM),BBB)
@@ -44,6 +44,9 @@ memory.i: memory.c
 project1.i: project1.c
 	$(CC) $(CFLAGS) $(INCLUDES) -E -o project1.i project1.c
 
+system_MKL25Z4.i: system_MKL25Z4.c
+	$(CC) $(CFLAGS) $(INCLUDES) -E -o system_MKL25Z4.i system_MKL25Z4.c
+
 
 arch_arm32.asm: arch_arm32.c
 	$(CC) $(CFLAGS) $(INCLUDES) -S -o arch_arm32.asm arch_arm32.c
@@ -65,6 +68,9 @@ main.asm: main.c
 
 project1.asm: project1.c
 	$(CC) $(CFLAGS) $(INCLUDES) -S -o project1.asm project1.c
+
+system_MKL25Z4.asm: system_MKL25Z4.c
+	$(CC) $(CFLAGS) $(INCLUDES) -S -o system_MKL25Z4.asm system_MKL25Z4.c
 
 
 arch_arm32.d: arch_arm32.c
@@ -88,6 +94,8 @@ memory.d: memory.c
 project1.d: project1.c #conversion.c memory.c
 	$(CC) $(CFLAGS) $(INCLUDES) -M -o project1.d project1.c
 
+system_MKL25Z4.d: system_MKL25Z4.c
+	$(CC) $(CFLAGS) $(INCLUDES) -M -o system_MKL25Z4.d system_MKL25Z4.c
 
 arch_arm32.o: arch_arm32.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c -o arch_arm32.o arch_arm32.c
@@ -110,8 +118,11 @@ memory.o: memory.c
 project1.o: project1.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c -o project1.o project1.c
 
-project1.elf: project1.o conversion.o memory.o debug.o
-	$(CC) $(CFLAGS) $(INCLUDES) $(LDFLAGS) -o project1.elf main.c project1.o conversion.o memory.o debug.o
+system_MKL25Z4.o: system_MKL25Z4.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c -o system_MKL25Z4.o system_MKL25Z4.c
+
+project1.elf: project1.o conversion.o memory.o debug.o arch_arm32.o system_MKL25Z4.o
+	$(CC) $(CFLAGS) $(INCLUDES) $(LDFLAGS) -o project1.elf main.c project1.o conversion.o memory.o debug.o system_MKL25Z4.o
 
 .PHONY: clean
 clean:

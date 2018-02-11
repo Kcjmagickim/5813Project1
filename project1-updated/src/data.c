@@ -5,6 +5,9 @@
 #swaps to accomodate different endianness
 @author: John Kim
 @date: Feb 3rd, 2018
+
+Note: All function descriptions 
+resides in the header file.
 ***********************************/
 
 #include "data.h"

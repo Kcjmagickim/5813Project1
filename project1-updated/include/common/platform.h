@@ -10,10 +10,14 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+/***************************************
+@brief: PRINTF macro
+****************************************/
+
 #ifdef KL25Z
 	#define PRINTF(...) printf(__VA_ARGS__) (0)
 #else
 	#define PRINTF(...) printf(__VA_ARGS__)
 #endif/*KL25z*/
 
-#endif
+#endif/*PLATFORM_H*/

@@ -17,5 +17,10 @@
 #define __AIRCR_ENDIANNESS_MASK (volatile int16_t) 0x8000
 
 uint32_t ARM32_AIRCR_get_endianness_setting();
+/***************************************
+@brief: checks the endianness setting of the
+current ARM CPU using AIRCR register
+@return: 0 if little-endian. 1 if big-endian
+****************************************/
 
 #endif /*arch_arm32*/

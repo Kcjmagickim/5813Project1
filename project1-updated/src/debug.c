@@ -3,6 +3,9 @@
 @brief: Printer for debugging purpose
 @author: John Kim
 @date: Feb 6th, 2018
+
+Note: All function descriptions 
+resides in the header file.
 ***********************************/
 
 #include "debug.h"

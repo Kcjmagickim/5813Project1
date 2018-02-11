@@ -3,6 +3,9 @@
 @brief: converts between integer and hex value
 @author: John Kim
 @date: Feb 3rd, 2018
+
+Note: All function descriptions 
+resides in the header file.
 ***********************************/
 
 #include "conversion.h"
