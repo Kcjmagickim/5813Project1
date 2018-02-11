@@ -9,7 +9,7 @@
 include sources.mk
 
 ifeq ($(PLATFORM),KL25z)
-	CC = arm-linux-gnueabi-gcc
+	CC = arm-none-eabi-gcc
 	CFLAGS += -mfloat-abi=softfp	\
 	 -mcpu=cortex-m0	\
 	-march=armv6-m	\
@@ -18,7 +18,7 @@ ifeq ($(PLATFORM),KL25z)
 	--specs=nosys.specs
 
 else ifeq ($(PLATFORM),BBB)
-	CC = arm-none-eabi-gcc
+	CC = arm-linux-gnueabi-gcc
 else
 	CC = gcc
 endif
