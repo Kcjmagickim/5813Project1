@@ -1,3 +1,10 @@
+/**********************************
+@file: memory.h
+@brief: header file for .c file
+@author: John Kim
+@date: Feb 1st, 2018
+***********************************/
+
 #ifndef MEMORY_H_
 #define MEMORY_H_
 #include <stdint.h>

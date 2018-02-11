@@ -1,9 +1,24 @@
-#5813 project 1
+#@file: MakeFile
+#@brief: GNU Make imeplementation
+#capable of generating .i, .asm, .d, .o, and .elf file
+#includes phony directives such as compile-all, build, and clean
+#@author: John Kim
+#@date: Feb 6th, 2018
+
 
 include sources.mk
 
 ifeq ($(PLATFORM),KL25z)
 	CC = arm-linux-gnueabi-gcc
+	CFLAGS += -mfloat-abi=softfp	\
+	 -mcpu=cortex-m0	\
+	-march=armv6-m	\
+	-mthumb	\
+	-mfpu=fpv4-sp-d16	
+	--specs=nosys.specs
+
+else ifeq ($(PLATFORM),BBB)
+	CC = arm-none-eabi-gcc
 else
 	CC = gcc
 endif

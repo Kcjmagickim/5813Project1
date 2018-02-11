@@ -1,3 +1,10 @@
+/**********************************
+@file: arch_arm32.h
+@brief: header file for .c file
+@author: John Kim
+@date: Feb 1st, 2018
+***********************************/
+
 #ifndef ARCH_ARM32_H
 #define ARCH_ARM32_H
 

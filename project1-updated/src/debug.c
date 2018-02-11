@@ -1,3 +1,10 @@
+/**********************************
+@file: debug.c
+@brief: Printer for debugging purpose
+@author: John Kim
+@date: Feb 6th, 2018
+***********************************/
+
 #include "debug.h"
 #include "platform.h"
 #include <stdint.h>

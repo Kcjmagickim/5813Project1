@@ -1,3 +1,10 @@
+/**********************************
+@file: data.h
+@brief: header file for .c file
+@author: John Kim
+@date: Feb 1st, 2018
+***********************************/
+
 #ifndef DATA_H_
 #define DATA_H_
 #include <stddef.h>

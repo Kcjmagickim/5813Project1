@@ -1,3 +1,11 @@
+/**********************************
+@file: memory.c
+@brief: Performs various memory manipulation including 
+dynamic allocation, moves, and swaps
+@author: John Kim
+@date: Feb 1st, 2018
+***********************************/
+
 #include "memory.h"
 #include <stdint.h>
 #include <stddef.h>

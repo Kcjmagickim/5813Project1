@@ -1,3 +1,12 @@
+/**********************************
+@file: data.c
+@brief: Used to determine the size of various types.
+#Also capable of determining endianness setting and performing
+#swaps to accomodate different endianness
+@author: John Kim
+@date: Feb 3rd, 2018
+***********************************/
+
 #include "data.h"
 #include <stdint.h>
 #include <stddef.h>

@@ -1,3 +1,10 @@
+/**********************************
+@file: conversion.h
+@brief: header file for .c file
+@author: John Kim
+@date: Feb 1st, 2018
+***********************************/
+
 #ifndef CONVERSION_H_
 #define CONVERSION_H_
 

@@ -1,3 +1,10 @@
+/**********************************
+@file: platform.h
+@brief: header file for .c file
+@author: John Kim
+@date: Feb 4th, 2018
+***********************************/
+
 #ifndef PLATFORM_H_
 #define PLATFORM_H_
 #include <stdarg.h>

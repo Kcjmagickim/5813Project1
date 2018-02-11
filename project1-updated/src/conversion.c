@@ -1,3 +1,10 @@
+/**********************************
+@file: conversion.c
+@brief: converts between integer and hex value
+@author: John Kim
+@date: Feb 3rd, 2018
+***********************************/
+
 #include "conversion.h"
 #include <stdint.h>
 #include <stdio.h>

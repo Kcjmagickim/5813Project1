@@ -1,3 +1,11 @@
+/**********************************
+@file: arch_arm32.c
+@brief: Used to get endianess of an ARM CPU
+returns 0 if little-endian 1 otherwise
+@author: John Kim
+@date: Feb 1st, 2018
+***********************************/
+
 #include "arch_arm32.h"
 #include <stdint.h>
 
