@@ -11,8 +11,6 @@ resides in the header file.
 
 #include "project1.h"
 
-Note: All function descriptions 
-resides in the header file.
 int main(){
 	#ifdef PROJECT1
 		project1();
