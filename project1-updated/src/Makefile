@@ -23,6 +23,12 @@ else
 	CC = gcc
 endif
 
+ifeq ($(VERBOSE),ON)
+	CFLAGS+=-DVERBOSE
+else
+	
+endif
+
 arch_arm32.i: arch_arm32.c
 	$(CC) $(CFLAGS) $(INCLUDES) -E -o arch_arm32.i arch_arm32.c
 
